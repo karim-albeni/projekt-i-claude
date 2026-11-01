@@ -1,0 +1,6 @@
+notes/
+reference/
+node_modules/
+.superpowers/
+.playwright-mcp/
+prototype/

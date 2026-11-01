@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Projekt i Claude: när, hur och hur du håller ordning</title>
+<meta name="description" content="En guide till projekt i Claude Desktop: när du ska använda ett projekt, hur du sätter upp det och hur du håller ordning på det.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%232747d8'/%3E%3Crect x='8' y='9' width='16' height='5' rx='1.5' fill='%23ffc93c'/%3E%3Crect x='8' y='17' width='11' height='3' rx='1.5' fill='%23ffffff'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="app.css">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+
+<nav class="rail" aria-label="Kapitel">
+  <a class="rail-title" href="#top">Projekt i Claude</a>
+  <div class="rail-group"><span>När</span>
+    <a class="ch" href="#varfor">Varför använda ett projekt?</a>
+    <a class="ch" href="#nar">När ska du göra ett projekt?</a>
+  </div>
+  <div class="rail-group"><span>Hur</span>
+    <a class="ch" href="#skapa">Skapa projektet</a>
+    <a class="ch" href="#instruktioner">Ge det instruktioner</a>
+    <a class="ch" href="#underlag">Ge det underlag</a>
+    <a class="ch" href="#mapp">En mapp på datorn</a>
+    <a class="ch" href="#jobba">Jobba i projektet</a>
+  </div>
+  <div class="rail-group"><span>Hantera</span>
+    <a class="ch" href="#aktuellt">Håll underlaget aktuellt</a>
+    <a class="ch" href="#minnet">Minnet</a>
+    <a class="ch" href="#schemalagt">Schemalagda jobb</a>
+    <a class="ch" href="#dela">Dela med kollegor</a>
+  </div>
+  <p class="rail-foot">Gäller Claude Desktop på en Team-plan. Kontrollerad i november 2026.</p>
+</nav>
+
+<main>
+  <header class="hero" id="top">
+    <div class="col">
+      <h1>Projekt i Claude</h1>
+      <p class="lead">När det är läge att använda ett projekt, hur du sätter upp det och hur du håller ordning på det efter hand.</p>
+    </div>
+  </header>
+
+  <!-- ===================== DEL 1: NÄR ===================== -->
+  <div class="part">
+    <div class="col">
+      <span class="part-no">Del 1</span>
+      <h2>När ska du använda ett projekt?</h2>
+    </div>
+  </div>
+
+  <section class="chapter" id="varfor">
+    <div class="col">
+      <h3>Varför använda ett projekt?</h3>
+      <p>Claude ser bara det som skickas med när du skriver. Startar du en ny chatt och frågar något om Exempel-bolaget så vet Claude inte vilken kund det är, vad ni har bestämt eller vilka dokument som gäller. Minnet kan plocka upp en del, men långt ifrån allt.</p>
+      <p>Så det slutar ofta med att man klistrar in samma bakgrund igen. Och igen.</p>
+      <p>I ett projekt följer instruktionerna och dokumenten med i varje chatt, utan att du behöver tänka på det. Bilden nedan visar vad som följer med.</p>
+    </div>
+    <div class="wide">
+      <figure class="player player-demo">
+        <ul class="legend" aria-label="Det här får Claude med sig">
+          <li data-layer="1"><b>1</b>Instruktionerna</li>
+          <li data-layer="2"><b>2</b>Dokumenten i Context</li>
+          <li data-layer="3"><b>3</b>Projektminnet</li>
+          <li class="you"><b>+</b>Ditt meddelande</li>
+        </ul>
+        <div class="viewport"></div>
+        <div class="player-foot">
+          <p class="caption" aria-live="polite"></p>
+          <button type="button" class="play">Pausa</button>
+        </div>
+      </figure>
+    </div>
+  </section>
+
+  <section class="chapter" id="nar">
+    <div class="col">
+      <h3>När ska du göra ett projekt?</h3>
+      <p>Inte allt behöver vara ett projekt. En snabb fråga funkar fint i en vanlig chatt. Men så fort du kommer tillbaka till samma sak flera gånger börjar det löna sig.</p>
+      <div class="compare">
+        <div class="yes">
+          <h4>Gör ett projekt när</h4>
+          <ul>
+            <li>du jobbar med samma kund eller uppdrag i flera chattar</li>
+            <li>du har dokument som Claude ska utgå från</li>
+            <li>du vill att Claude svarar på ett visst sätt varje gång</li>
+            <li>kollegor ska kunna jobba med samma underlag</li>
+          </ul>
+        </div>
+        <div class="no">
+          <h4>En vanlig chatt räcker när</h4>
+          <ul>
+            <li>du har en snabb fråga</li>
+            <li>det är något du gör en gång och sen är klar med</li>
+            <li>det inte finns något underlag att utgå från</li>
+          </ul>
+        </div>
+      </div>
+      <p class="rule">En enkel tumregel: jobbar du med något i mer än en chatt, gör ett projekt av det.</p>
+    </div>
+  </section>
+
+  <!-- ===================== DEL 2: HUR ===================== -->
+  <div class="part">
+    <div class="col">
+      <span class="part-no">Del 2</span>
+      <h2>Så sätter du upp ett projekt</h2>
+    </div>
+  </div>
+
+  <section class="chapter" id="skapa">
+    <div class="col">
+      <h3>Skapa projektet</h3>
+      <p>Det här tar ungefär en minut. Gå till <span class="ui">Projects</span> i menyn till vänster och klicka på <span class="ui">New project</span>. Ge projektet ett namn som du och kollegorna känner igen direkt, typ kundens namn, och skriv en rad om vad det ska hjälpa till med. Låt <span class="ui">Private</span> vara valt och klicka på <span class="ui">Create project</span>.</p>
+    </div>
+    <div class="wide">
+      <figure class="player" data-scene="create">
+        <div class="viewport"></div>
+        <div class="player-foot"><p class="caption" aria-live="polite"></p><button type="button" class="play">Pausa</button></div>
+      </figure>
+    </div>
+    <div class="col">
+      <details class="more">
+        <summary>Private eller hela organisationen?</summary>
+        <p><span class="ui">Private</span> betyder att bara du och de du bjuder in kommer åt projektet. Väljer du organisationen kan alla där se och använda det.</p>
+        <p>Börja med Private. Du kan alltid dela senare.</p>
+      </details>
+    </div>
+  </section>
+
+  <section class="chapter" id="instruktioner">
+    <div class="col">
+      <h3>Ge det instruktioner</h3>
+      <p>Instruktionerna gäller i varje chatt i projektet. Det är här du bestämmer hur Claude ska jobba: vad projektet handlar om, vad som gäller och hur du vill ha svaren.</p>
+      <p>Klicka på plusset vid <span class="ui">Instructions</span> i högerspalten, skriv och spara med <span class="ui">Save instructions</span>.</p>
+    </div>
+    <div class="wide">
+      <figure class="player" data-scene="instructions">
+        <div class="viewport"></div>
+        <div class="player-foot"><p class="caption" aria-live="polite"></p><button type="button" class="play">Pausa</button></div>
+      </figure>
+    </div>
+    <div class="col">
+      <p>Håll det kort och konkret. Det som brukar göra mest nytta är vad projektet gäller, vilka dokument som är viktigast (och vilket som gäller om två säger emot varandra), hur svaren ska se ut, och vad Claude ska göra när underlaget inte räcker. Det sista är viktigt: be Claude säga till i stället för att gissa.</p>
+      <div class="example">
+        <div class="example-head"><span>Ett exempel att utgå från</span><button type="button" class="btn" id="copy">Kopiera</button></div>
+<pre id="example">Projektet gäller införandet av ett nytt CRM hos Exempel-bolaget.
+
+Underlag:
+- Scope.pdf beskriver vad som ingår. Den gäller före allt annat.
+- Beslutslogg.docx innehåller beslut vi tagit med kunden, nyaste först.
+
+Så här vill jag att du jobbar:
+- Svara utifrån underlaget. Räcker det inte, säg det i stället för att gissa.
+- Säg till om något verkar ligga utanför det vi kommit överens om.
+- Skriv kort och på svenska.</pre>
+      </div>
+      <p class="copy-status" id="copy-status" aria-live="polite"></p>
+      <details class="more">
+        <summary>Hur funkar det ihop med mina egna instruktioner?</summary>
+        <p>Projektets instruktioner gäller tillsammans med dina personliga instruktioner och den stil du valt i chatten. Skriv därför bara sånt som gäller just det här projektet.</p>
+      </details>
+    </div>
+  </section>
+
+  <section class="chapter" id="underlag">
+    <div class="col">
+      <h3>Ge det underlag</h3>
+      <p>Under <span class="ui">Context</span> lägger du det Claude ska kunna slå upp: PDF:er, dokument eller text. Typ en spec, ett avtal, mötesanteckningar eller en beslutslogg.</p>
+      <p>Allt som ligger där finns med i alla chattar i projektet. Delar du projektet får kollegorna samma underlag.</p>
+    </div>
+    <div class="wide">
+      <figure class="player" data-scene="context">
+        <div class="viewport"></div>
+        <div class="player-foot"><p class="caption" aria-live="polite"></p><button type="button" class="play">Pausa</button></div>
+      </figure>
+    </div>
+    <div class="col">
+      <p>Lägg in det viktigaste, inte allt du har. När underlaget blir stort börjar Claude söka fram de delar som verkar relevanta i stället för att läsa allt, och ett välvalt underlag gör det lättare att hitta rätt.</p>
+    </div>
+  </section>
+
+  <section class="chapter" id="mapp">
+    <div class="col">
+      <h3>Låt Claude jobba i en mapp på datorn</h3>
+      <p>Context är till för att Claude ska slå upp saker. En mapp är till för att Claude ska jobba i den. När du lägger till en mapp på datorn kan Claude läsa, sortera och skapa filer direkt där, till exempel spara en färdig rapport eller städa upp i en rörig mapp.</p>
+      <p>Det här kräver appen Claude Desktop, och appen måste vara igång. Projektet, instruktionerna och underlaget ligger i ditt Claude-konto, men mappen ligger kvar på din dator. Appen är det som kopplar ihop dem.</p>
+      <div class="where" role="img" aria-label="Instruktioner, Context och chattar ligger i ditt Claude-konto. Mappen ligger på din dator. Claude Desktop kopplar ihop dem medan appen är igång.">
+        <div class="where-box">
+          <h4>I ditt Claude-konto</h4>
+          <p>Når du från appen och från webben</p>
+          <ul><li>Instruktionerna</li><li>Underlaget i Context</li><li>Dina chattar</li></ul>
+        </div>
+        <div class="where-bridge"><span>Claude Desktop</span><small>måste vara igång</small></div>
+        <div class="where-box">
+          <h4>På din dator</h4>
+          <p>Bara du, och bara via appen</p>
+          <ul><li class="local">Mappen och filerna i den</li></ul>
+        </div>
+      </div>
+      <p style="margin-top:2rem">Klicka på plusset vid <span class="ui">Folder</span> och välj mappen.</p>
+    </div>
+    <div class="wide">
+      <figure class="player" data-scene="folder">
+        <div class="viewport"></div>
+        <div class="player-foot"><p class="caption" aria-live="polite"></p><button type="button" class="play">Pausa</button></div>
+      </figure>
+    </div>
+    <div class="col">
+      <p>Mappen är märkt <span class="ui">Only you</span>. Den följer inte med när du delar projektet, så kollegorna kommer inte åt den. Behöver de samma filer, lägg dem i Context i stället.</p>
+      <p>Som standard frågar Claude innan den raderar filer för gott.</p>
+    </div>
+  </section>
+
+  <section class="chapter" id="jobba">
+    <div class="col">
+      <h3>Jobba i projektet</h3>
+      <p>Nu är det bara att köra. Skriv i rutan högst upp på projektsidan, så tar Claude med sig instruktionerna och underlaget av sig själv. Du kan gå rakt på sak.</p>
+    </div>
+    <div class="wide">
+      <figure class="player" data-scene="work">
+        <div class="viewport"></div>
+        <div class="player-foot"><p class="caption" aria-live="polite"></p><button type="button" class="play">Pausa</button></div>
+      </figure>
+    </div>
+    <div class="col">
+      <p>Dina chattar är privata, även i ett delat projekt. Har du kommit fram till något som kollegorna behöver? Lägg in det i Context eller dela chatten. Fliken <span class="ui">Activity</span> är till för det som teamet lägger till och delar.</p>
+      <details class="more">
+        <summary>Chat eller Cowork, Manual eller Auto?</summary>
+        <p><span class="ui">Chat</span> passar för frågor, resonemang och text. <span class="ui">Cowork</span> passar när Claude ska göra jobbet åt dig, typ ta fram en fil eller jobba i en mapp.</p>
+        <p>Under rutan ser du hur mycket Claude stämmer av med dig. Med <span class="ui">Manual</span> frågar Claude innan den gör något. Med <span class="ui">Auto</span> jobbar Claude på utan att fråga om varje steg, men med automatiska säkerhetskontroller. Auto är förvalt på Team-planer och Manual på Enterprise.</p>
+        <p>Jobbar Claude med filer eller annat som är svårt att ångra, välj Manual och håll koll på vad som händer.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- ===================== DEL 3: HANTERA ===================== -->
+  <div class="part">
+    <div class="col">
+      <span class="part-no">Del 3</span>
+      <h2>Så håller du ordning på det</h2>
+    </div>
+  </div>
+
+  <section class="chapter" id="aktuellt">
+    <div class="col">
+      <h3>Håll underlaget aktuellt</h3>
+      <p>Ett projekt blir aldrig bättre än underlaget. Det här är det som brukar ställa till det:</p>
+      <ul>
+        <li><strong>Gamla versioner.</strong> Två versioner av samma dokument är det snabbaste sättet att få svar som säger emot varandra. Ta bort den gamla när du lägger in en ny.</li>
+        <li><strong>Filer som ändrats.</strong> Filer du laddar upp från datorn är kopior. Ändras originalet behöver du lägga in det igen.</li>
+        <li><strong>Instruktioner som inte stämmer längre.</strong> Har projektet ändrat riktning, uppdatera instruktionerna också.</li>
+      </ul>
+      <p>Ta för vana att kolla Context när något stort har hänt i projektet, typ ett nytt beslut eller en ny version av scopet.</p>
+    </div>
+  </section>
+
+  <section class="chapter" id="minnet">
+    <div class="col">
+      <h3>Minnet</h3>
+      <p>Claude lär sig av chattarna i projektet och sparar det som projektminne. Efter några chattar dyker det upp under <span class="ui">Memory</span> i högerspalten.</p>
+    </div>
+    <div class="wide">
+      <figure class="player" data-scene="memory">
+        <div class="viewport"></div>
+        <div class="player-foot"><p class="caption" aria-live="polite"></p><button type="button" class="play">Pausa</button></div>
+      </figure>
+    </div>
+    <div class="col">
+      <p>Det Claude lär sig i ett projekt följer inte med till andra projekt. Men som standard delar projektet minne med dina chattar utanför projekt. Vill du hålla det helt separat, till exempel i ett kundprojekt, stänger du av inställningen <span class="ui">Use account memory</span> för projektet.</p>
+      <div class="note"><strong>Lita inte på minnet för sånt som måste stämma</strong><p>Beslut och fakta lägger du i Context. Minnet är bra på att komma ihåg hur du jobbar, inte på att vara en källa.</p></div>
+      <details class="more">
+        <summary>Ser du inte Memory alls?</summary>
+        <p>På Team- och Enterprise-planer bestämmer den som äger organisationen om minnet är påslaget.</p>
+      </details>
+    </div>
+  </section>
+
+  <section class="chapter" id="schemalagt">
+    <div class="col">
+      <h3>Schemalagda jobb</h3>
+      <p>Ett schemalagt jobb är en uppgift som Claude kör av sig själv, till exempel varje morgon. Bra för rutinsaker: en morgonkoll, en sammanfattning inför veckomötet eller en lista med frågor som fortfarande är öppna.</p>
+    </div>
+    <div class="wide">
+      <figure class="player" data-scene="scheduled">
+        <div class="viewport"></div>
+        <div class="player-foot"><p class="caption" aria-live="polite"></p><button type="button" class="play">Pausa</button></div>
+      </figure>
+    </div>
+    <div class="col">
+      <div class="note"><strong>Tänk efter innan du sparar</strong><p><span class="ui">Automatically approve</span> är förvalt. Då jobbar Claude och använder kopplingar (connectors) utan att stanna och fråga. Smidigt, men låt till exempel inte jobbet skicka något till kunder förrän du har sett att det gör rätt.</p></div>
+      <p style="margin-top:1.8rem">Schemalagda jobb kan köras i molnet, så de kan fortsätta även när datorn är avstängd. Jobb som använder filer på datorn behöver däremot att Claude Desktop är igång.</p>
+    </div>
+  </section>
+
+  <section class="chapter" id="dela">
+    <div class="col">
+      <h3>Dela med kollegor</h3>
+      <p>När du delar ett projekt får kollegorna samma instruktioner och samma underlag som du. De kan jobba i projektet med exakt samma bakgrund. Men dina chattar ser de inte.</p>
+      <div class="compare">
+        <div class="yes">
+          <h4>Kollegorna får</h4>
+          <ul><li>Instruktionerna</li><li>Underlaget i Context</li></ul>
+        </div>
+        <div class="no">
+          <h4>Kollegorna ser inte</h4>
+          <ul><li>Dina chattar, om du inte delar dem</li><li>Ditt projektminne</li><li>Mappen på din dator</li></ul>
+        </div>
+      </div>
+      <p style="margin-top:1.8rem">Klicka på <span class="ui">Share</span> uppe till höger på projektsidan, sök fram kollegan och klicka på <span class="ui">Share</span>.</p>
+    </div>
+    <div class="wide">
+      <figure class="player" data-scene="share">
+        <div class="viewport"></div>
+        <div class="player-foot"><p class="caption" aria-live="polite"></p><button type="button" class="play">Pausa</button></div>
+      </figure>
+    </div>
+    <div class="col">
+      <p>Du kan välja vad varje person får göra. Med <span class="ui">Can view</span> kan de läsa instruktioner och underlag och chatta i projektet, men inte ändra något. Med <span class="ui">Can edit</span> kan de också ändra instruktioner och underlag och bestämma vilka som är med.</p>
+      <p>Vill du att hela organisationen ska komma åt projektet ändrar du <span class="ui">General access</span>, som från början står på <span class="ui">Only people invited</span>.</p>
+      <div class="note"><strong>Bara inom samma organisation</strong><p>Du kan bara dela med personer i samma Claude-organisation. Den som tillhör en annan organisation, eller inte finns i Claude hos er alls, går inte att bjuda in.</p></div>
+      <p style="margin-top:1.8rem">Kollegorna hittar projektet under <span class="ui">Shared with you</span> på sidan Projects. Projekt som delas med hela organisationen ligger under <span class="ui">Organization</span>.</p>
+      <details class="more">
+        <summary>Går det inte att dela alls?</summary>
+        <p>På Team- och Enterprise-planer kan en admin ha stängt av delning av projekt.</p>
+      </details>
+    </div>
+  </section>
+
+  <div class="closing">
+    <div class="col">
+      <p>Börja med ett projekt för något du jobbar med just nu. Lägg in det viktigaste underlaget och skriv några rader instruktioner. Resten kan du fylla på efter hand.</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="col">
+    <h2>Källor</h2>
+    <ol>
+      <li><a href="https://support.claude.com/en/articles/9519177-how-can-i-create-and-manage-projects">How can I create and manage projects?</a></li>
+      <li><a href="https://support.claude.com/en/articles/14116274-organize-your-tasks-with-projects-in-claude-cowork">Organize your tasks with projects in Claude Cowork</a></li>
+      <li><a href="https://support.claude.com/en/articles/16761823-claude-cowork-and-chat-are-one-claude">Claude Cowork and chat are one Claude</a></li>
+      <li><a href="https://support.claude.com/en/articles/11473015-retrieval-augmented-generation-rag-for-projects">Retrieval augmented generation (RAG) for projects</a></li>
+      <li><a href="https://support.claude.com/en/articles/11817273-use-claude-s-chat-search-and-memory-to-build-on-previous-context">Use Claude's chat search and memory to build on previous context</a></li>
+      <li><a href="https://support.claude.com/en/articles/13364135-use-claude-cowork-safely">Use Claude Cowork safely</a></li>
+    </ol>
+    <p>Senast kontrollerad mot Claude Desktop och Claudes hjälpcenter i november 2026. Alla namn, företag och e-postadresser i guiden är påhittade. Bilderna av appen är ritade efter riktiga skärmbilder.</p>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+<script src="site.js"></script>
+</body>
+</html>
