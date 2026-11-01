@@ -82,8 +82,6 @@ details.more p:last-child { margin-bottom: 0.4rem; }
 /* Markering i appen: gul överstrykningspenna */
 .w-sec.lit { position: relative; box-shadow: inset 0 0 0 3px var(--marker); background: rgba(255, 201, 60, 0.1); }
 .w-sec.lit::after { content: attr(data-badge); position: absolute; left: -22px; top: 10px; width: 36px; height: 36px; border-radius: 50%; background: var(--marker); color: #15171c; font: 800 19px/36px var(--font); text-align: center; box-shadow: 0 0 0 4px #191919; }
-.w-newchat { position: absolute; inset: 0; display: grid; place-items: center; }
-.w-composer-center { width: 640px; }
 
 /* ---------- Guidelagret i appbilden ---------- */
 .g-ring { position: absolute; z-index: 60; pointer-events: none; border: 3px solid var(--marker); border-radius: 10px; box-shadow: 0 0 0 7px rgba(255, 201, 60, 0.2);

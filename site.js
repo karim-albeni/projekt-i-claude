@@ -10,7 +10,6 @@
    Bygger på app.js (sidebar, projectPage, modalerna, frame, OVERLAY, STORY).
 
    ATT KONTROLLERA MOT APPEN (sök efter VERIFY och data-verify):
-   - new-chat-screen      hur en tom chatt utanför projekt ser ut
    - instructions-saved   vad Instructions-rutan visar efter att du sparat
    - context-files        hur uppladdade filer visas under Context
    - folder-added         hur Folder-rutan ser ut när en mapp är vald
@@ -22,16 +21,6 @@ const REDUCED = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const CANCEL = Symbol("cancel");
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 const toSelector = (t) => /^[\w-]+$/.test(t) ? `[data-t="${t}"]` : t;
-
-// VERIFY: new-chat-screen. Ritad utan skärmbild: tom chatt med rutan i mitten.
-function newChatPage() {
-  return `<div class="w-newchat" data-verify="new-chat-screen">
-    <div class="w-composer w-composer-center">
-      <div class="w-draft ph" data-ph="How can I help you today?"></div>
-      <div class="w-crow">${ic("plus")}<span class="w-model">Opus 5.5<i>Medium</i></span>${ic("mic")}${ic("down", "tiny")}</div>
-    </div>
-  </div>`;
-}
 
 const PAGE = { w: 1000, h: 690 };
 const pageFor = (scene, modals = "") =>
@@ -428,11 +417,10 @@ function initPlayer(figure) {
    3. DEMON: vad Claude får med sig när du skriver
    ===================================================================== */
 const DEMO_STATES = [
-  { view: "chat", lit: 0, ms: 3600, text: "En vanlig chatt. Claude får ditt meddelande, plus det som minnet råkar ha plockat upp." },
-  { view: "project", lit: 1, ms: 3000, text: "I ett projekt följer instruktionerna med i varje chatt." },
-  { view: "project", lit: 2, ms: 3600, text: "Dokumenten i Context följer också med. Blir det mycket söker Claude fram de delar som verkar relevanta." },
-  { view: "project", lit: 3, ms: 3600, text: "Och projektminnet, alltså det Claude har lärt sig av dina chattar i projektet. Det är bara ditt." },
-  { view: "project", lit: 3, ms: 3200, text: "Allt det här får Claude med sig, varje gång du skriver i projektet." }
+  { lit: 1, ms: 3000, text: "I ett projekt följer instruktionerna med i varje chatt." },
+  { lit: 2, ms: 3600, text: "Dokumenten i Context följer också med. Blir det mycket söker Claude fram de delar som verkar relevanta." },
+  { lit: 3, ms: 3600, text: "Och projektminnet, alltså det Claude har lärt sig av dina chattar i projektet. Det är bara ditt." },
+  { lit: 3, ms: 3200, text: "Allt det här får Claude med sig, varje gång du skriver i projektet." }
 ];
 const LIT_SECTIONS = [["instructions", 1], ["context", 2], ["memory", 3]];
 
@@ -447,21 +435,15 @@ function initContextDemo(figure) {
   const fit = () => { canvas.style.transform = `scale(${viewport.clientWidth / W || 1})`; };
   new ResizeObserver(fit).observe(viewport);
 
-  const views = {
-    chat: frame({ side: "New", body: newChatPage() }),
-    project: frame({ side: "Projects", crumb: crumbFor(PROJECT), body: projectPage({ state: { instr: true, files: true } }) })
-  };
-  let current = "";
+  canvas.innerHTML = frame({ side: "Projects", crumb: crumbFor(PROJECT), body: projectPage({ state: { instr: true, files: true } }) });
+  fit();
 
   function show(state) {
-    if (state.view !== current) { canvas.innerHTML = views[state.view]; current = state.view; fit(); }
-    if (state.view === "project") {
-      LIT_SECTIONS.forEach(([t, n]) => {
-        const sec = canvas.querySelector(`[data-t="${t}"]`);
-        sec.dataset.badge = String(n);
-        sec.classList.toggle("lit", n <= state.lit);
-      });
-    }
+    LIT_SECTIONS.forEach(([t, n]) => {
+      const sec = canvas.querySelector(`[data-t="${t}"]`);
+      sec.dataset.badge = String(n);
+      sec.classList.toggle("lit", n <= state.lit);
+    });
     legend.forEach((li) => li.classList.toggle("on", Number(li.dataset.layer) <= state.lit));
     caption.textContent = state.text;
   }
