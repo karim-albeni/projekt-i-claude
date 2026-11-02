@@ -417,10 +417,10 @@ function initPlayer(figure) {
    3. DEMON: vad Claude får med sig när du skriver
    ===================================================================== */
 const DEMO_STATES = [
-  { lit: 1, ms: 3000, text: "I ett projekt följer instruktionerna med i varje chatt." },
-  { lit: 2, ms: 3600, text: "Dokumenten i Context följer också med. Blir det mycket söker Claude fram de delar som verkar relevanta." },
-  { lit: 3, ms: 3600, text: "Och projektminnet, alltså det Claude har lärt sig av dina chattar i projektet. Det är bara ditt." },
-  { lit: 3, ms: 3200, text: "Allt det här får Claude med sig, varje gång du skriver i projektet." }
+  { lit: 1, ms: 1800, text: "I ett projekt följer instruktionerna med i varje chatt." },
+  { lit: 2, ms: 2400, text: "Dokumenten i Context följer också med. Blir det mycket söker Claude fram de delar som verkar relevanta." },
+  { lit: 3, ms: 2400, text: "Och projektminnet, alltså det Claude har lärt sig av dina chattar i projektet. Det är bara ditt." },
+  { lit: 3, ms: 2200, text: "Allt det här får Claude med sig, varje gång du skriver i projektet." }
 ];
 const LIT_SECTIONS = [["instructions", 1], ["context", 2], ["memory", 3]];
 
